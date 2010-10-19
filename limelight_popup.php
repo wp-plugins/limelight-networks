@@ -98,9 +98,9 @@ function request_cached_resource( $url , $key , $timeout=7200 ) {
 		<li id="media_tab"><span><a href="javascript:mcTabs.displayTab('media_tab','media_panel');" onmousedown="return false;">Media</a></span></li>
 	</ul>
 </div>
-<div class="panel_wrapper">
+<div class="panel_wrapper" overflow>
 	<!-- media panel -->
-	<div id="media_panel" class="panel">
+	<div id="media_panel" class="panel" style="overflow:hidden;">
 		<p>Media</p>
 		<?php
 		$media_url = "http://api.delvenetworks.com/organizations/$limelight_org_id/media.json";
@@ -134,7 +134,7 @@ function request_cached_resource( $url , $key , $timeout=7200 ) {
 			</div>
 		</div>
 	</div>
-	<div id="channels_panel" class="panel current">
+	<div id="channels_panel" class="panel current" style="overflow:hidden;">
 		<p>Channel</p>
 		<?php
 		$url = "http://api.delvenetworks.com/organizations/$limelight_org_id/channels.json";
