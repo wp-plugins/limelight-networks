@@ -106,7 +106,7 @@ function request_cached_resource( $url , $key , $timeout=7200 ) {
 		$media_url = "http://api.delvenetworks.com/organizations/$limelight_org_id/media.json";
 		$media_json = request_cached_resource( $media_url , 'media' );
 		if ( $media_json === false) {
-			echo "<p><strong>Error loading media.</strong></p>";
+			echo "<p><strong>Error loading media. Try reloading this window.</strong></p>";
 		}
 		?>
 		<select id="media_select">
@@ -140,7 +140,7 @@ function request_cached_resource( $url , $key , $timeout=7200 ) {
 		$url = "http://api.delvenetworks.com/organizations/$limelight_org_id/channels.json";
 		$channels_json = request_cached_resource( $url , 'channels' );
 		if ( $channels_json === false) {
-			echo "<p><strong>Error loading channels.</strong></p>";
+			echo "<p><strong>Error loading channels. Try reloading this window.</strong></p>";
 		}
 		?>
 		<select id="channel_select">
