@@ -3,7 +3,7 @@ Contributors: nstielau
 Tags: video, media, delve, delve networks, limelight, limelight networks, embed codes
 Requires at least: 3.0.0
 Tested up to: 3.0.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Limelight Networks video platform integration.  Add your media to any Wordpress post or page.
 
@@ -44,6 +44,9 @@ Your will see your 32 character organization ID.  It will look something like "1
 * First version.
 
 = 1.0.1 =
+* Trivial style and text changes.
+
+= 1.0.2 =
 * Trivial style and text changes.
 
 == Upgrade Notice ==

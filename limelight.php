@@ -2,9 +2,9 @@
 /*
 Plugin Name: Limelight Networks
 Description: Integrates your video content into Wordpress.
-Version: 1.0.0
+Version: 1.0.2
 Plugin URI: http://www.limelightnetworks.com/
-Author: Limelight
+Author: Limelight Networks
 Author URI: http://www.limelightnetworks.com/
 */
 
