@@ -3,7 +3,7 @@ Contributors: nstielau
 Tags: video, media, delve, delve networks, limelight, limelight networks, embed codes
 Requires at least: 3.0.0
 Tested up to: 3.0.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Limelight Networks video platform integration.  Add your media to any Wordpress post or page.
 
@@ -18,12 +18,16 @@ Requires PHP 5+
 
 Standard plugin installation procedure:
 
-1. Upload the plugin directory `limelight_networks` to the `/wp-content/plugins/` directory.
+1. Upload the plugin directory `limelight-networks` to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Configure the plugin in the Limelight Networks settings page (add your organization id, choose default options)
 4. Insert videos or channels using the Limelight Networks shortcode (`[limelight FLASHVARS WIDTH HEIGHT]`) or the Limelight Networks button added to the editor.
 
 == Frequently Asked Questions ==
+
+= Do I need a Delve Networks / Limelight Networks Account? =
+
+Yes.
 
 = Where can I find my 'organization ID'? =
 
@@ -48,6 +52,9 @@ Your will see your 32 character organization ID.  It will look something like "1
 
 = 1.0.2 =
 * Trivial style and text changes.
+
+= 1.0.3 =
+* Using single option row, uninstall handler, specifying defaults for both channels and media embeds.
 
 == Upgrade Notice ==
 

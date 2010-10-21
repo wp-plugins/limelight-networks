@@ -2,7 +2,7 @@
 /*
 Plugin Name: Limelight Networks
 Description: Integrates your video content into Wordpress.
-Version: 1.0.2
+Version: 1.0.3
 Plugin URI: http://www.limelightnetworks.com/
 Author: Limelight Networks
 Author URI: http://www.limelightnetworks.com/
@@ -39,23 +39,36 @@ function limelight_networks_options() {
 // "[limelight channelId=CHANNEL_ID 210 175]"
 // "[limelight channelId=CHANNEL_ID&someFlashVar=SOME_FLASHVAR 210 175]"
 
-define( 'LIMELIGHT_WIDTH' , 480 ); // default width
-define( 'LIMELIGHT_HEIGHT' , 411 ); // default height
+define( 'LIMELIGHT_MEDIA_PLAYER_WIDTH' , 480 ); // default width
+define( 'LIMELIGHT_MEDIA_PLAYER_HEIGHT' , 411 ); // default height
+define( 'LIMELIGHT_CHANNELS_PLAYER_WIDTH' , 940 ); // default width
+define( 'LIMELIGHT_CHANNELS_PLAYER_HEIGHT' , 413 ); // default height
+
 define( 'LIMELIGHT_REGEXP' , "/\[limelight ([[:print:]]+)\]/");
 define( 'LIMELIGHT_TARGET' , '<object width="###WIDTH###" height="###HEIGHT###" id="delve_player440704o" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param name="movie" value="http://assets.delvenetworks.com/player/loader.swf"/><param name="wmode" value="window"/><param name="allowScriptAccess" value="always"/><param name="allowFullScreen" value="true"/><param name="flashvars" value="###FLASHVARS###"/><embed src="http://assets.delvenetworks.com/player/loader.swf" name="delve_player440704e" wmode="window" width="###WIDTH###" height="###HEIGHT###" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" flashvars="###FLASHVARS###"></embed></object>' );
 
-add_option( 'limelight_default_width' , LIMELIGHT_WIDTH );
-add_option( 'limelight_default_height' , LIMELIGHT_HEIGHT );
-add_option( 'limelight_additional_flashvars' , "" );
+$limelight_options = array();
+
+$limelight_options['limelight_channels_player_width'] = LIMELIGHT_CHANNELS_PLAYER_WIDTH;
+$limelight_options['limelight_channels_player_height'] = LIMELIGHT_CHANNELS_PLAYER_HEIGHT;
+$limelight_options['limelight_channels_player_form'] = "DelvePlaylistPlayer";
+
+$limelight_options['limelight_media_player_width'] = LIMELIGHT_MEDIA_PLAYER_WIDTH;
+$limelight_options['limelight_media_player_height'] = LIMELIGHT_MEDIA_PLAYER_HEIGHT;
+$limelight_options['limelight_media_player_form'] = "DelvePlayer";
+
+$limelight_options['limelight_additional_flashvars'] = "";
+$limelight_options['limelight_org_id'] = "";
+
+add_option( 'limelight_options' , $limelight_options, '', 'no');
 
 // Replace shortcode with embed code, swapping out placeholders in the embed template
 // with defaults and parameters from shortcode.
 function limelight_embed_generation_callback( $match ) {
 	$tag_parts = explode(" ", rtrim($match[0] , ']' ));
 	$flashvars = $tag_parts[1];
-	$additional_flashvars = get_option( 'limelight_additional_flashvars' , '' );
 	$output = LIMELIGHT_TARGET;
-	$output = str_replace( '###FLASHVARS###' , "$additional_flashvars&$flashvars" , $output );
+	$output = str_replace( '###FLASHVARS###' , $flashvars , $output );
 
 	if (array_key_exists(2, $tag_parts) && trim($tag_parts[2]) != "") {
 		$width = $tag_parts[2];
