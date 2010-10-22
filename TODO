@@ -1,8 +1,3 @@
-	Uninstall function to remove db options
-	Stores options as array
-	Add options with autoload=no
-
-
 	Admin_notices: Complain if org ID isn't set
 	PHP 4 Json solution: http://blueberryware.net/wp-content/uploads/2008/10/jsonphp.txt
 	Widgets?

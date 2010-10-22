@@ -29,7 +29,7 @@
 
       // Register example button
       ed.addButton('limelight_networks', {
-        title : 'Insert Limelight Networks media',
+        title : 'Insert Limelight VPS media',
         cmd : 'mce_limelight',
         image : url + '/limelight_logo.png'
       });
@@ -48,8 +48,8 @@
      */
     getInfo : function() {
       return {
-          longname  : 'Limelight Networks',
-          author    : 'Limelight Networks',
+          longname  : 'Limelight VPS',
+          author    : 'Limelight VPS',
           authorurl : 'http://limelightnetworks.com',
           infourl   : 'http://limelightnetworks.com',
           version   : "1.0"

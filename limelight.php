@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Limelight Networks
-Description: Integrates your video content into Wordpress.
-Version: 1.0.3
+Plugin Name: Limelight VPS
+Description: Integrates your Limelight VPS video content into Wordpress.
+Version: 1.0.4
 Plugin URI: http://www.limelightnetworks.com/
-Author: Limelight Networks
+Author: Limelight VPS
 Author URI: http://www.limelightnetworks.com/
 */
 
@@ -16,7 +16,7 @@ add_action( 'admin_menu' , 'limelight_settings_menu' );
 
 function limelight_settings_menu() {
 	// Add a menu item to the 'Settings' menu
-	add_options_page( 'Limelight Networks Options' , 'Limelight Networks' , 'manage_options' , 'limelight_networks' , 'limelight_networks_options' );
+	add_options_page( 'Limelight VPS Options' , 'Limelight VPS' , 'manage_options' , 'limelight_networks' , 'limelight_networks_options' );
 }
 
 function limelight_networks_options() {
