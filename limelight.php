@@ -2,7 +2,7 @@
 /*
 Plugin Name: Limelight VPS
 Description: Integrates your Limelight VPS video content into Wordpress.
-Version: 1.0.4
+Version: 1.0.5
 Plugin URI: http://www.limelightnetworks.com/
 Author: Limelight VPS
 Author URI: http://www.limelightnetworks.com/

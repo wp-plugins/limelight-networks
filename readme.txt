@@ -3,7 +3,7 @@ Contributors: nstielau
 Tags: video, media, delve, delve networks, limelight, limelight networks, limelight vps, embed codes
 Requires at least: 3.0.0
 Tested up to: 3.0.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 Limelight VPS video platform integration.  Add your media to any Wordpress post or page.
 
@@ -58,6 +58,9 @@ Your will see your 32 character organization ID.  It will look something like "1
 
 = 1.0.4 =
 * Changing name from Limelight Networks to Limelight VPS
+
+= 1.0.5 =
+* More text changes.
 
 == Upgrade Notice ==
 
