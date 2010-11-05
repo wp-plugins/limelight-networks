@@ -2,11 +2,22 @@
 /*
 Plugin Name: Limelight VPS
 Description: Integrates your Limelight VPS video content into Wordpress.
-Version: 1.0.5
+Version: 1.1.0
 Plugin URI: http://www.limelightnetworks.com/
 Author: Limelight VPS
 Author URI: http://www.limelightnetworks.com/
 */
+
+//////////////////////////////////////////////
+// Constants
+//////////////////////////////////////////////
+
+if( !defined( 'LIMELIGHT_CACHE_GROUP') )
+	define( 'LIMELIGHT_CACHE_GROUP', 'limelight' );
+if( !defined( 'LIMELIGHT_CHANNELS_CACHE_KEY') )
+	define( 'LIMELIGHT_CHANNELS_CACHE_KEY', 'channels' );
+if( !defined( 'LIMELIGHT_MEDIA_CACHE_KEY') )
+	define( 'LIMELIGHT_MEDIA_CACHE_KEY', 'media' );
 
 
 //////////////////////////////////////////////
@@ -27,7 +38,6 @@ function limelight_networks_options() {
 	// Load the admin content
 	include( 'limelight_admin.php' );
 }
-
 
 
 //////////////////////////////////////////////
@@ -96,17 +106,54 @@ add_filter( 'the_content_rss', 'limelight_embed_generation' );
 add_filter( 'the_excerpt', 'limelight_embed_generation' );
 
 
+//////////////////////////////////////////////
+// Add Video Tab
+//////////////////////////////////////////////
+
+add_action( 'media_upload_limelight_media' , 'limelight_media_tab' );
+add_action( 'media_upload_limelight_channels' , 'limelight_channels_tab' );
+add_filter( 'media_upload_tabs' , 'limelight_add_media_upload_tab' ); // will add tab to the modal media box
+add_filter( 'media_upload_tabs' , 'limelight_add_channels_upload_tab' ); // will add tab to the modal channels box
+
+function limelight_add_media_upload_tab( $content ) {
+	$content["limelight_media"] = __( 'Limelight Media' );
+	return $content;
+}
+
+function limelight_add_channels_upload_tab( $content ) {
+	$content["limelight_channels"] = __( 'Limelight Channels' );
+	return $content;
+}
+
+function limelight_media_tab() {
+	wp_enqueue_style( 'media' );
+	global $limelight_upload_type;
+	$limelight_upload_type = 'media';
+	wp_iframe( 'limelight_video_tab_content' );
+}
+
+function limelight_channels_tab() {
+	wp_enqueue_style( 'media' );
+	global $limelight_upload_type;
+	$limelight_upload_type = 'channels';
+	wp_iframe( 'limelight_video_tab_content' );
+}
+
+function limelight_video_tab_content() {
+	media_upload_header(); // will add the tabs menu
+	require( 'limelight_media_tab.php' );
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////
-// Adding the actions and hooks for admin menu, and embed-code short code replacement.
+// Visual Editor Button
 //////////////////////////////////////////////////////////////////////////////////////
 
 class add_limelight_button {
 
 	var $pluginname = "limelight_networks";
 
-	function add_limelight_button()	{
+	function add_limelight_button() {
 		// Modify the version when tinyMCE plugins are changed.
 		add_filter( 'tiny_mce_version' , array (&$this, 'change_tinymce_version') );
 
