@@ -85,7 +85,7 @@ wp_enqueue_style('imgareaselect');
 <body style="margin: 0 8px;">
 <?php if ( $limelight_options['limelight_org_id'] != "" && strlen( $limelight_options['limelight_org_id'] ) == 32 ) { ?>
 	<div>
-    <?php include("limelight_$limelight_upload_type.php"); ?>
+    <?php include('limelight_'.$limelight_upload_type.'_insert_form.php'); ?>
 		<div class="mceActionPanel">
 			<div style="float: left">
 			<input type="button" id="cancel" name="cancel" value="Cancel" onclick="close_modal();" />
