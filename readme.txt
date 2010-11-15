@@ -3,7 +3,7 @@ Contributors: nstielau
 Tags: video, media, delve, delve networks, limelight, limelight networks, limelight vps, embed codes
 Requires at least: 3.0.0
 Tested up to: 3.0.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 Limelight VPS video platform integration.  Add your media to any Wordpress post or page.
 
@@ -35,7 +35,7 @@ Your will see your 32 character organization ID.  It will look something like "1
 
 == Screenshots ==
 
-1. The new Limelight VPS button added to the visual editor.
+1. The two buttons to insert VPS Media: the media upload area and the visual editor.
 2. Select your media/channels easily from drop-down menus.
 3. View all of your media/channels in drop-down menus.
 4. Use the wizard or manually use the Limelight VPS shortcode to insert video into your Wordpress posts and pages.
@@ -65,8 +65,11 @@ Your will see your 32 character organization ID.  It will look something like "1
 * Added UI for Add a Video area.
 * Adding JSON-decoder for PHP 4
 
-= 1.1.0 =
+= 1.1.1 =
 * Fix for new "Add a Video" tabs
+
+= 1.1.2 =
+* Readme Update
 
 == Upgrade Notice ==
 
