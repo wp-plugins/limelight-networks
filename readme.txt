@@ -71,6 +71,9 @@ Your will see your 32 character organization ID.  It will look something like "1
 = 1.1.2 =
 * Readme Update
 
+= 1.1.3 =
+* Version Update
+
 == Upgrade Notice ==
 
 = 1.0.0 =
