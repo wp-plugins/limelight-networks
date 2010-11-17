@@ -1,0 +1,10 @@
+	Admin_notices: Complain if org ID isn't set
+	Widgets?
+	  Media for specified channel
+	Validation
+	  Validate both insert window.php and admin options page
+	  Check that the org ID is there
+	  Check that is org ID is valid (32 chars, alpha numerics)
+	Fix modal height issue
+	Loading spinner when waiting for API
+	Translation files
